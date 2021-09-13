@@ -214,20 +214,23 @@ Create graphs to explore the relationship between `bill_length_mm` and each of `
 Using these three graphs to discuss which of these three categorical variables seems to be contributing more to these two peaks and explain your reasoning.
 
 ```{r bill_length_by_species}
-
+ggplot(data=penguins) +
+  geom_boxplot(mapping=aes(x=bill_length_mm, y=species, color=species))
 ```
 
 
 ```{r bill_length_by_sex}
-
+ggplot(data=penguins) +
+  geom_boxplot(mapping=aes(x=bill_length_mm, y=sex, color=sex))
 ```
 
 
 ```{r bill_length_by_island}
-
+ggplot(data=penguins) +
+  geom_boxplot(mapping=aes(x=bill_length_mm, y=island, color=island))
 ```
 
-**Response**:
+**Response**: Sex appears to be the categorical variable that contributes to both peaks the most. Females tend to have shorter beaks than males.
 
 
 Knit, stage, commit (with a meaningful commit message),and push everything in your **Git** pane to your GitHub repo.

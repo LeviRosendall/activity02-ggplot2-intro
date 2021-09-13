@@ -298,7 +298,36 @@ graphs). Using these three graphs to discuss which of these three
 categorical variables seems to be contributing more to these two peaks
 and explain your reasoning.
 
-**Response**:
+``` r
+ggplot(data=penguins) +
+  geom_boxplot(mapping=aes(x=bill_length_mm, y=species, color=species))
+```
+
+    ## Warning: Removed 2 rows containing non-finite values (stat_boxplot).
+
+![](activity02-ggplot2-intro_files/figure-gfm/bill_length_by_species-1.png)<!-- -->
+
+``` r
+ggplot(data=penguins) +
+  geom_boxplot(mapping=aes(x=bill_length_mm, y=sex, color=sex))
+```
+
+    ## Warning: Removed 2 rows containing non-finite values (stat_boxplot).
+
+![](activity02-ggplot2-intro_files/figure-gfm/bill_length_by_sex-1.png)<!-- -->
+
+``` r
+ggplot(data=penguins) +
+  geom_boxplot(mapping=aes(x=bill_length_mm, y=island, color=island))
+```
+
+    ## Warning: Removed 2 rows containing non-finite values (stat_boxplot).
+
+![](activity02-ggplot2-intro_files/figure-gfm/bill_length_by_island-1.png)<!-- -->
+
+**Response**: Sex appears to be the categorical variable that
+contributes to both peaks the most. Females tend to have shorter beaks
+than males.
 
 Knit, stage, commit (with a meaningful commit message),and push
 everything in your **Git** pane to your GitHub repo. Go to GitHub and
