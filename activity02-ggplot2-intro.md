@@ -342,16 +342,37 @@ exploring scatterplots using `{ggplot2}`.
 In the code chunk below, create a scatterplot for the relationship
 between `flipper_length_mm` and `body_mass_g`.
 
+``` r
+ggplot(data=penguins) +
+  geom_point(mapping=aes(x=flipper_length_mm, y=body_mass_g))
+```
+
+    ## Warning: Removed 2 rows containing missing values (geom_point).
+
+![](activity02-ggplot2-intro_files/figure-gfm/flipper_vs_mass-1.png)<!-- -->
+
 Describe any patterns that you notice.
 
-**Response**:
+**Response**: It appears that as flipper length increases, body mass
+increases.
 
 Recreate your scatterplot in the code chunk below; however, *map*
 `species` to the `color` and `shape` aesthetics.
 
+``` r
+ggplot(data=penguins) +
+  geom_point(mapping=aes(x=flipper_length_mm, y=body_mass_g, color=species, shape=species))
+```
+
+    ## Warning: Removed 2 rows containing missing values (geom_point).
+
+![](activity02-ggplot2-intro_files/figure-gfm/flipper_vs_mass_with_species-1.png)<!-- -->
+
 Describe any patterns that you notice.
 
-**Response**:
+**Response**: Adelie and Chinstrap appear to have similar distibutions
+and relationships. Gentoo has a greater positive relationship between
+flipper length and body mass as well as greater of the two in general.
 
 The previous plot looked great except even in this rather small dataset
 (n = 344), there might are a number of points overlapping. In the R code
@@ -360,9 +381,19 @@ aesthetic) of `size` (using some value larger than zero) and `alpha`
 (using some value between 0 and 1) to make your previous plot more
 effective.
 
+``` r
+ggplot(data=penguins) +
+  geom_point(mapping=aes(x=flipper_length_mm, y=body_mass_g, color=species, shape=species),  size=2, alpha=0.33)
+```
+
+    ## Warning: Removed 2 rows containing missing values (geom_point).
+
+![](activity02-ggplot2-intro_files/figure-gfm/flipper_vs_mass_with_size_alpha-1.png)<!-- -->
+
 Discuss the decisions you made to help your plot be easier to read.
 
-**Response**:
+**Response**: We are now able to see the density of different points, as
+well as if two different species overlap.
 
 Knit, stage, commit (with a meaningful commit message),and push
 everything in your **Git** pane to your GitHub repo. Go to GitHub and
